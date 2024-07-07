@@ -12,7 +12,12 @@ function App() {
   const [query, setQuery] = useState<string>("");
 
   useEffect(() => {
-    getData(`https://${apiKey}.mockapi.io/employees?name=${query}`, setResults);
+    if (query !== "")
+      getData(
+        `https://${apiKey}.mockapi.io/employees?name=${query}`,
+        setResults
+      );
+    console.log("query", query);
   }, [query]);
 
   return (
