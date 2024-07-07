@@ -3,9 +3,9 @@ import { IUser } from "../types/userTypes";
 import { IResults } from "../types/resultsTypes";
 import OverlayLoading from "./common/OverlayLoading";
 
-const Results: FC<IResults> = ({ results }) => {
+const Results: FC<IResults> = ({ results, loading }) => {
   return (
-    <OverlayLoading isActive={false}>
+    <OverlayLoading isActive={loading}>
       <section className="pt-12 relative">
         <h2 className="font-bold border-natural-400 border-b-[1px] border-solid pb-2">
           Results ({results?.length || 0})
@@ -14,7 +14,7 @@ const Results: FC<IResults> = ({ results }) => {
           {results ? (
             results?.map((user: IUser) => (
               <div className="flex items-center pb-8" key={user.id}>
-                <img src={user.avatar} alt={user.name} />
+                <img src={user.avatar} alt={user.name} loading="lazy" />
                 <div className="pl-2">
                   <h3 className="font-bold">{user.name}</h3>
                   <p>{user.title}</p>
