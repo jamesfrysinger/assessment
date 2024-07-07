@@ -9,16 +9,17 @@ const apiKey = process.env.REACT_APP_API_KEY;
 
 function App() {
   const [results, setResults] = useState<IUsers>();
+  const [query, setQuery] = useState<string>("");
 
   useEffect(() => {
-    getData(`https://${apiKey}.mockapi.io/employees`, setResults);
-  }, []);
+    getData(`https://${apiKey}.mockapi.io/employees?name=${query}`, setResults);
+  }, [query]);
 
   return (
     <div className="flex justify-center items-center flex-wrap h-screen p-6">
       <div className="min-w-[800px]">
         <Header />
-        <Search />
+        <Search setQuery={setQuery} />
         <Results results={results} />
       </div>
     </div>

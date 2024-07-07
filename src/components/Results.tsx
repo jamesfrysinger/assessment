@@ -11,7 +11,7 @@ const Results: FC<IResults> = ({ results }) => {
       <div className="grid grid-cols-2 pt-8">
         {results ? (
           results?.map((user: IUser) => (
-            <div className="flex items-center pb-8">
+            <div className="flex items-center pb-8" key={user.id}>
               <img src={user.avatar} alt={user.name} />
               <div className="pl-2">
                 <h3 className="font-bold">{user.name}</h3>
