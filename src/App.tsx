@@ -4,20 +4,19 @@ import Header from "./components/Header";
 import Results from "./components/Results";
 import Search from "./components/Search";
 import { IUsers } from "./types/userTypes";
+import { getData } from "./utils/getData";
+const apiKey = process.env.REACT_APP_API_KEY;
 
 function App() {
   const [results, setResults] = useState<IUsers>();
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => setResults(data))
-      .catch((err) => console.warn(err));
+    getData(`https://${apiKey}.mockapi.io/employees`, setResults);
   }, []);
 
   return (
-    <div className="flex items-center justify-center flex-wrap h-screen p-6">
-      <div>
+    <div className="flex justify-center items-center flex-wrap h-screen p-6">
+      <div className="min-w-[800px]">
         <Header />
         <Search />
         <Results results={results} />
