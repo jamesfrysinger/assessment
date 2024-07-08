@@ -1,9 +1,9 @@
 import { Button, TextField } from "@mui/material";
 import { ChangeEvent, Dispatch, FC, SetStateAction, useState } from "react";
 
-const Search: FC<{ setQuery: Dispatch<SetStateAction<string>> }> = ({
-  setQuery,
-}) => {
+const Search: FC<{
+  setQuery: Dispatch<SetStateAction<string | undefined>>;
+}> = ({ setQuery }) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const handleSubmit = () => {

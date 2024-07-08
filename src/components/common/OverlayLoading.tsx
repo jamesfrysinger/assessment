@@ -9,7 +9,7 @@ const OverlayLoading: FC<IOverlayLoading> = ({ children, isActive }) => {
     <LoadingOverlay
       active={isActive}
       spinner
-      fadeSpeed={100}
+      fadeSpeed={0}
       text="Searching"
       styles={{
         content: (base) => ({

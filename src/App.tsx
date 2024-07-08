@@ -9,20 +9,23 @@ const apiKey = process.env.REACT_APP_API_KEY;
 
 function App() {
   const [results, setResults] = useState<IUsers>();
-  const [query, setQuery] = useState<string>("");
+  const [query, setQuery] = useState<string | undefined>();
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    setLoading(true);
-
-    setTimeout(() => {
-      setLoading(false);
-      if (query !== "")
-        getData(
-          `https://${apiKey}.mockapi.io/employees?name=${query}`,
-          setResults
-        );
-    }, 1000);
+    if (!query) {
+    } else {
+      setLoading(true);
+      setTimeout(() => {
+        if (query !== "") {
+          getData(
+            `https://${apiKey}.mockapi.io/employees?name=${query}`,
+            setResults,
+            setLoading
+          );
+        } else setLoading(false);
+      }, 1000);
+    }
   }, [query]);
 
   return (
@@ -30,7 +33,7 @@ function App() {
       <div className="min-w-[800px]">
         <Header />
         <Search setQuery={setQuery} />
-        <Results results={results} loading={loading} />
+        {query && <Results results={results} loading={loading} />}
       </div>
     </div>
   );
