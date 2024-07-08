@@ -35,7 +35,6 @@ function App() {
         <Header />
         <Search setQuery={setQuery} />
         <Results results={results} loading={loading} />
-        <UserDetails />
       </div>
     </div>
   );

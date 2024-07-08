@@ -3,6 +3,7 @@ import ResultCard from "../../components/ResultCard";
 
 const mockUser = {
   id: "1",
+  createdAt: "",
   name: "James Frysinger",
   title: "Front-End Engineer",
   email: "frysingerjames@gmail.com",
