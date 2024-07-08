@@ -8,7 +8,15 @@ const ResultCard: FC<{ user: IUser }> = ({ user }) => {
       <div className="pl-2">
         <h3 className="font-bold">{user.name}</h3>
         <p>{user.title}</p>
-        <p>{user.email}</p>
+        <p>
+          <a
+            href={`mailto:${user.email}`}
+            target="_blank"
+            className="underline"
+          >
+            {user.email}
+          </a>
+        </p>
       </div>
     </div>
   );

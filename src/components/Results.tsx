@@ -12,7 +12,7 @@ const Results: FC<IResults> = ({ results, loading }) => {
         <h2 className="font-bold border-natural-400 border-b-[1px] border-solid pb-2">
           Results ({results?.length || 0})
         </h2>
-        <div className="grid grid-cols-2 pt-8">
+        <div className="grid md:grid-cols-2 pt-8">
           {results ? (
             results?.map((user: IUser) => <LazyResultCard user={user} />)
           ) : (

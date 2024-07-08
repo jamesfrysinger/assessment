@@ -5,6 +5,7 @@ import Search from "./components/Search";
 import { IUsers } from "./types/userTypes";
 import { getData } from "./utils/getData";
 import Results from "./components/Results";
+
 const apiKey = process.env.REACT_APP_API_KEY;
 
 function App() {
@@ -24,16 +25,17 @@ function App() {
             setLoading
           );
         } else setLoading(false);
-      }, 1000);
+      }, 500);
     }
   }, [query]);
 
   return (
     <div className="flex justify-center flex-wrap h-screen p-6">
-      <div className="min-w-[800px]">
+      <div className="sm:w-[800px]">
         <Header />
         <Search setQuery={setQuery} />
         <Results results={results} loading={loading} />
+        <UserDetails />
       </div>
     </div>
   );
