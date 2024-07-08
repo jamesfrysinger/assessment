@@ -1,10 +1,9 @@
 import { FC, ReactElement } from "react";
 import LoadingOverlay from "react-loading-overlay-ts";
-interface IOverlayLoading {
+const OverlayLoading: FC<{
   children: ReactElement;
   isActive: boolean;
-}
-const OverlayLoading: FC<IOverlayLoading> = ({ children, isActive }) => {
+}> = ({ children, isActive }) => {
   return (
     <LoadingOverlay
       active={isActive}
@@ -20,6 +19,7 @@ const OverlayLoading: FC<IOverlayLoading> = ({ children, isActive }) => {
           ...base,
           background: "rgba(255, 255, 255, 1)",
           color: "#f8dd14",
+          minHeight: 300,
         }),
         spinner: (base) => ({
           ...base,

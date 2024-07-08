@@ -6,16 +6,20 @@ export const getData = async (
   setFunc: Dispatch<SetStateAction<IUsers | undefined>>,
   setLoadingFunc?: Dispatch<SetStateAction<boolean>>
 ) => {
+  const clearLoading = () => {
+    if (setLoadingFunc) setLoadingFunc(false);
+  };
+  setFunc(undefined);
   try {
     const res = await fetch(url);
     if (!res.ok) {
-      setFunc(undefined);
       throw new Error("Network response was not ok!");
     }
     const data = await res.json();
     setFunc(data);
-    if (setLoadingFunc) setLoadingFunc(false);
+    clearLoading();
   } catch (err) {
     console.warn(err);
+    clearLoading();
   }
 };
