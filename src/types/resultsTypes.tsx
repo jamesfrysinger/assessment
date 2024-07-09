@@ -1,6 +1,6 @@
-import { IUsers } from "./userTypes";
+import { IEmployees } from "./userTypes";
 
 export interface IResults {
-  results: IUsers | undefined;
+  results: IEmployees | undefined;
   loading: boolean;
 }

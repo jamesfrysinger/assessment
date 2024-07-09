@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction } from "react";
-import { IUsers } from "../types/userTypes";
+import { IEmployees } from "../types/userTypes";
 
 export const getData = async (
   url: string,
-  setData: Dispatch<SetStateAction<IUsers | undefined>>,
+  setData: Dispatch<SetStateAction<IEmployees | undefined>>,
   setError: Dispatch<SetStateAction<string | undefined>>,
   setLoading?: Dispatch<SetStateAction<boolean>>
 ) => {

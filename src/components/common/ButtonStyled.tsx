@@ -4,12 +4,12 @@ import { FC } from "react";
 const ButtonStyled: FC<{
   label: string;
   onClick?: () => void;
-  type: string;
+  type: "button" | "submit" | "reset";
 }> = ({ label, onClick, type }) => {
   return (
     <Button
       variant="contained"
-      type="submit"
+      type={type}
       sx={{
         height: "56px",
         marginLeft: "-1px",

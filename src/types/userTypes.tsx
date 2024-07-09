@@ -1,4 +1,4 @@
-export type IUsers = [IUser];
+export type IEmployees = [IUser];
 
 export interface IUser {
   createdAt: string;
