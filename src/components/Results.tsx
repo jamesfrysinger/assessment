@@ -16,8 +16,8 @@ const Results: FC<IResults> = ({ results, loading }) => {
           {results ? (
             results?.map((user: IUser) => <LazyResultCard user={user} />)
           ) : (
-            <p style={{ color: "#888", fontSize: "13px" }}>
-              No results. Please search for a user via the text field above.
+            <p className="text-neutral-400 text-sm">
+              No results. Please search for an employee above.
             </p>
           )}
         </div>

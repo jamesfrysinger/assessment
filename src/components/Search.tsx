@@ -1,5 +1,6 @@
-import { Button, TextField } from "@mui/material";
 import { ChangeEvent, Dispatch, FC, SetStateAction, useState } from "react";
+import ButtonStyled from "./common/ButtonStyled";
+import TextFieldStyled from "./common/TextFieldStyled";
 
 const Search: FC<{
   setQuery: Dispatch<SetStateAction<string | undefined>>;
@@ -14,25 +15,13 @@ const Search: FC<{
   };
   return (
     <section className="flex">
-      <TextField
-        id="outlined-basic"
-        label="Enter name"
-        variant="outlined"
-        style={{ width: "100%" }}
-        helperText="Search for users at URBN. Enter a name above."
-        FormHelperTextProps={{
-          sx: { margin: "10px 0 0 0", color: "#888" },
-        }}
+      <TextFieldStyled
         value={searchTerm}
         onChange={handleChange}
+        label="Enter a name"
+        helperText="Search for employees. Enter a name above."
       />
-      <Button
-        variant="contained"
-        style={{ height: "55px", borderRadius: "0", backgroundColor: "#000" }}
-        onClick={handleSubmit}
-      >
-        Search
-      </Button>
+      <ButtonStyled label="Search" onClick={handleSubmit} />
     </section>
   );
 };

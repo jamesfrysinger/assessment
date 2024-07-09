@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className="flex justify-center flex-wrap h-screen p-6">
-      <div className="sm:w-[800px]">
+      <div className="w-[100%] sm:w-[800px]">
         <Header />
         <Search setQuery={setQuery} />
         <Results results={results} loading={loading} />
