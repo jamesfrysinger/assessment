@@ -7,12 +7,12 @@ const ResultCard: FC<{ user: IUser }> = ({ user }) => {
       <img src={user.avatar} alt={user.name} loading="lazy" />
       <div className="pl-2">
         <h3 className="font-bold">{user.name}</h3>
-        <p>{user.title}</p>
+        <p className="text-neutral-500">{user.title}</p>
         <p>
           <a
             href={`mailto:${user.email}`}
             target="_blank"
-            className="underline"
+            className="underline text-neutral-500"
           >
             {user.email}
           </a>

@@ -17,7 +17,7 @@ const OverlayLoading: FC<{
         }),
         overlay: (base) => ({
           ...base,
-          background: "rgba(255, 255, 255, 1)",
+          background: "#f7f7f7",
           color: "#f8dd14",
           minHeight: 300,
         }),
