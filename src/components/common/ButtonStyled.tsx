@@ -1,13 +1,15 @@
 import { Button } from "@mui/material";
 import { FC } from "react";
 
-const ButtonStyled: FC<{ label: string; onClick?: () => void }> = ({
-  label,
-  onClick,
-}) => {
+const ButtonStyled: FC<{
+  label: string;
+  onClick?: () => void;
+  type: string;
+}> = ({ label, onClick, type }) => {
   return (
     <Button
       variant="contained"
+      type="submit"
       sx={{
         height: "56px",
         marginLeft: "-1px",
@@ -19,7 +21,7 @@ const ButtonStyled: FC<{ label: string; onClick?: () => void }> = ({
           boxShadow: "none",
         },
       }}
-      onClick={onClick}
+      onClick={onClick ? onClick : undefined}
     >
       {label}
     </Button>
