@@ -14,7 +14,7 @@ export const getData = async (
 
     const res = await fetch(url);
     if (!res.ok) {
-      throw new Error("Network response was not ok!");
+      throw new Error("Cannot retrieve data due to network error.");
     }
     const data = await res.json();
     setData(data);

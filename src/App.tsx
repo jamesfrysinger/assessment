@@ -5,7 +5,7 @@ import Search from "./components/Search";
 import { IUsers } from "./types/userTypes";
 import { getData } from "./utils/getData";
 import Results from "./components/Results";
-import { Alert, Snackbar } from "@mui/material";
+import { Alert } from "@mui/material";
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -37,7 +37,7 @@ function App() {
   };
   return (
     <div className="flex justify-center flex-wrap h-screen p-6">
-      <div className="w-[100%] sm:w-[800px]">
+      <div className="w-[100%] sm:w-[860px]">
         {error && (
           <Alert
             severity="error"

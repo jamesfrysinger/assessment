@@ -1,7 +1,7 @@
 import { FC, ReactElement } from "react";
 import LoadingOverlay from "react-loading-overlay-ts";
 const OverlayLoading: FC<{
-  children: ReactElement;
+  children?: ReactElement;
   isActive: boolean;
 }> = ({ children, isActive }) => {
   return (

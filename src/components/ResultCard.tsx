@@ -12,6 +12,7 @@ const ResultCard: FC<{ user: IUser }> = ({ user }) => {
           <a
             href={`mailto:${user.email}`}
             target="_blank"
+            rel="noreferrer"
             className="underline text-neutral-500"
           >
             {user.email}

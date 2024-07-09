@@ -1,4 +1,4 @@
-import { FC, lazy } from "react";
+import { FC, lazy, Suspense } from "react";
 import { IUser } from "../types/userTypes";
 import { IResults } from "../types/resultsTypes";
 import OverlayLoading from "./common/OverlayLoading";
@@ -14,7 +14,11 @@ const Results: FC<IResults> = ({ results, loading }) => {
         </h2>
         <div className="grid md:grid-cols-2 pt-8">
           {results ? (
-            results?.map((user: IUser) => <LazyResultCard user={user} />)
+            results?.map((user: IUser) => (
+              <Suspense fallback={<div>Loading...</div>}>
+                <LazyResultCard user={user} />
+              </Suspense>
+            ))
           ) : (
             <p className="text-neutral-400 text-sm">
               No results. Please search for an employee above.
