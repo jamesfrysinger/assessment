@@ -1,9 +1,9 @@
-import { FC, lazy, Suspense } from "react";
-import { IUser } from "../types/userTypes";
-import { IResults } from "../types/resultsTypes";
-import OverlayLoading from "./common/OverlayLoading";
+import { FC, lazy, Suspense } from 'react';
+import { IUser } from '../types/userTypes';
+import { IResults } from '../types/resultsTypes';
+import OverlayLoading from './common/OverlayLoading';
 
-const LazyResultCard = lazy(() => import("./ResultCard"));
+const LazyResultCard = lazy(() => import('./ResultCard'));
 
 const Results: FC<IResults> = ({ results, loading }) => {
   return (
@@ -14,8 +14,8 @@ const Results: FC<IResults> = ({ results, loading }) => {
         </h2>
         <div className="grid md:grid-cols-2 pt-8">
           {results ? (
-            results?.map((user: IUser) => (
-              <Suspense fallback={<div>Loading...</div>}>
+            results?.map((user: IUser, index) => (
+              <Suspense fallback={<div>Loading...</div>} key={user.id}>
                 <LazyResultCard user={user} />
               </Suspense>
             ))

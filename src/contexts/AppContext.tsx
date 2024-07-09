@@ -4,31 +4,18 @@ import {
   ReactNode,
   SetStateAction,
   useContext,
-  useEffect,
   useState,
 } from "react";
 import { createContext } from "react";
 import { IEmployees } from "../types/userTypes";
-
 interface IAppContext {
   results: IEmployees | undefined;
   setResults: Dispatch<SetStateAction<IEmployees | undefined>>;
 }
-
 const AppContext = createContext<IAppContext | undefined>(undefined);
 
 export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [results, setResults] = useState<IEmployees | undefined>(() => {
-    const savedResults = localStorage.getItem("results");
-    return savedResults ? JSON.parse(savedResults) : undefined;
-  });
-
-  useEffect(() => {
-    if (results !== undefined) {
-      localStorage.setItem("results", JSON.stringify(results));
-    }
-  }, [results]);
-
+  const [results, setResults] = useState<IEmployees | undefined>(undefined);
   return (
     <AppContext.Provider value={{ results, setResults }}>
       {children}
