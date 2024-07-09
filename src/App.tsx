@@ -5,7 +5,7 @@ import Search from "./components/Search";
 import { IUsers } from "./types/userTypes";
 import { getData } from "./utils/getData";
 import Results from "./components/Results";
-import { Snackbar } from "@mui/material";
+import { Alert, Snackbar } from "@mui/material";
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -35,13 +35,11 @@ function App() {
   return (
     <div className="flex justify-center flex-wrap h-screen p-6">
       <div className="w-[100%] sm:w-[800px]">
-        {/* <Snackbar
-          anchorOrigin={{ vertical, horizontal }}
-          open={open}
-          onClose={handleClose}
-          message="I love snacks"
-          key={vertical + horizontal}
-        /> */}
+        {error && (
+          <Alert severity="error" style={{ marginBottom: 20 }}>
+            {error}
+          </Alert>
+        )}
         <Header />
         <Search setQuery={setQuery} />
         <Results results={results} loading={loading} />
