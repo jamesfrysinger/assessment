@@ -32,11 +32,18 @@ function App() {
     }
   }, [query]);
 
+  const handleAlertClose = () => {
+    setError(undefined);
+  };
   return (
     <div className="flex justify-center flex-wrap h-screen p-6">
       <div className="w-[100%] sm:w-[800px]">
         {error && (
-          <Alert severity="error" style={{ marginBottom: 20 }}>
+          <Alert
+            severity="error"
+            className="mb-[20px]"
+            onClose={handleAlertClose}
+          >
             {error}
           </Alert>
         )}
