@@ -1,12 +1,12 @@
-import { ChangeEvent, Dispatch, FC, SetStateAction, useState } from "react";
-import ButtonStyled from "./common/ButtonStyled";
-import TextFieldStyled from "./common/TextFieldStyled";
-import { Box } from "@mui/material";
+import { ChangeEvent, Dispatch, FC, SetStateAction, useState } from 'react';
+import ButtonStyled from './common/ButtonStyled';
+import TextFieldStyled from './common/TextFieldStyled';
+import { Box } from '@mui/material';
 
 const Search: FC<{
   setQuery: Dispatch<SetStateAction<string | undefined>>;
 }> = ({ setQuery }) => {
-  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   const handleSubmit = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();

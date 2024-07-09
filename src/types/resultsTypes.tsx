@@ -1,4 +1,4 @@
-import { IEmployees } from "./userTypes";
+import { IEmployees } from './userTypes';
 
 export interface IResults {
   results: IEmployees | undefined;

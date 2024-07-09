@@ -5,9 +5,9 @@ import {
   SetStateAction,
   useContext,
   useState,
-} from "react";
-import { createContext } from "react";
-import { IEmployees } from "../types/userTypes";
+} from 'react';
+import { createContext } from 'react';
+import { IEmployees } from '../types/userTypes';
 interface IAppContext {
   results: IEmployees | undefined;
   setResults: Dispatch<SetStateAction<IEmployees | undefined>>;
@@ -26,7 +26,7 @@ export const AppProvider: FC<{ children: ReactNode }> = ({ children }) => {
 export const useAppContext = () => {
   const context = useContext(AppContext);
   if (context === undefined) {
-    throw new Error("useAppContext must be used within an AppProvider");
+    throw new Error('useAppContext must be used within an AppProvider');
   }
   return context;
 };

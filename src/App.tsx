@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import Header from "./components/Header";
-import Search from "./components/Search";
-import { getData } from "./utils/getData";
-import Results from "./components/Results";
-import { Alert } from "@mui/material";
-import { useAppContext } from "./contexts/AppContext";
+import { useEffect, useState } from 'react';
+import './App.css';
+import Header from './components/Header';
+import Search from './components/Search';
+import { getData } from './utils/getData';
+import Results from './components/Results';
+import { Alert } from '@mui/material';
+import { useAppContext } from './contexts/AppContext';
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
@@ -21,7 +21,7 @@ function App() {
     } else {
       setLoading(true);
       setTimeout(() => {
-        if (query !== "") {
+        if (query !== '') {
           getData(
             `https://${apiKey}.mockapi.io/employees?name=${query}`,
             setResults,

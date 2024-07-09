@@ -1,5 +1,5 @@
-import { FC, ReactNode } from "react";
-import LoadingOverlay from "react-loading-overlay-ts";
+import { FC, ReactNode } from 'react';
+import LoadingOverlay from 'react-loading-overlay-ts';
 const OverlayLoading: FC<{
   children?: ReactNode;
   isActive: boolean;
@@ -13,18 +13,18 @@ const OverlayLoading: FC<{
       styles={{
         content: (base) => ({
           ...base,
-          margin: "50px auto",
+          margin: '50px auto',
         }),
         overlay: (base) => ({
           ...base,
-          background: "#f7f7f7",
-          color: "#f8dd14",
+          background: '#f7f7f7',
+          color: '#f8dd14',
           minHeight: 300,
         }),
         spinner: (base) => ({
           ...base,
-          "& svg circle": {
-            stroke: "#f8dd14",
+          '& svg circle': {
+            stroke: '#f8dd14',
           },
         }),
       }}

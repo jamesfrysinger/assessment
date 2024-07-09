@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { IUser } from "../types/userTypes";
+import { FC } from 'react';
+import { IUser } from '../types/userTypes';
 
 const ResultCard: FC<{ user: IUser }> = ({ user }) => {
   return (
